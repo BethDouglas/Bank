@@ -57,6 +57,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Bank.Models\Bank.Models.csproj">
+      <Project>{27C5C850-F5BE-453B-96D7-FDC4676D137F}</Project>
+      <Name>Bank.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Bank.Services\Bank.Services.csproj">
       <Project>{1e8689cc-06d4-4f6b-bf60-07f3b8d8d17e}</Project>
       <Name>Bank.Services</Name>

@@ -24,24 +24,28 @@ namespace ATMConsole
 
             //Console.WriteLine(${"Hello {customerName}");
 
-            Console.WriteLine("Tell you first name:");
-            string first = Console.ReadLine();
+            // - - - - Get Name from person typiong in Console-----
+            //Console.WriteLine("Tell you first name:");
+            //string first = Console.ReadLine();
+            //Console.WriteLine("What is your last name");
+            //string last = Console.ReadLine();
+            // CustomerService customerName = new CustomerService();
+            //customerName.CreateCustomer(first,last);
 
-            Console.WriteLine("What is your last name");
-            string last = Console.ReadLine();
+            //Console.WriteLine("Please choose a 6 digit account number");
+            //int accountNumber = Int32.Parse(Console.ReadLine());
 
-            CustomerService customerName = new CustomerService();
-            customerName.CreateCustomer(first, last);
+            //Console.WriteLine("Please choose a 4 digit PIN");
+            //int pin = Int32.Parse(Console.ReadLine());
 
-            //AccountService accountNumber = this.accountNumber
-            //this.AccountNumber = 123456;
+            //--Type in names to enter into db--
+            //CustomerService customerName = new CustomerService();
+            //customerName.CreateCustomer("Person", "BoPerson");
+
+            AccountService accountNumber = new AccountService();
+            accountNumber.CreateAccount(123456);
 
         }
-
-
-
-
-
 
     }
 }
