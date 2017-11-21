@@ -9,13 +9,17 @@ namespace Bank.Services
 {
     public class AccountService
     {
-        public bool CreateAccount(int accountNumber, int pinNumber, string accountType, double accountBalance)
+        public bool CreateAccount(Account model)
         {
             var entity =
                 new Account()
                 {
-                    AccountNumber = accountNumber
+                    AccountNumber = model.AccountNumber,
+                    Pin = model.Pin,
+                    AccountType = model.AccountType,
+                    AccountBalance = model.AccountBalance
                 };
+
             using (var ctx = new BankEntities())
             {
                 ctx.Accounts.Add(entity);
