@@ -7,30 +7,40 @@ using Bank.Models;
 
 namespace Bank.Services
 {
+
     public class AccountService
     {
-        public bool CreateAccount(Account model)
+
+        public bool CreateAccount(int accountNumber, int pin, string accountType, decimal accountBalance, int customerID)
         {
             var entity =
                 new Account()
                 {
-                    AccountNumber = model.AccountNumber,
-                    Pin = model.Pin,
-                    AccountType = model.AccountType,
-                    AccountBalance = model.AccountBalance
+                    AccountNumber = accountNumber,
+                    Pin = pin,
+                    AccountType = accountType,
+                    AccountBalance = accountBalance,
+                    CustomerID = customerID
                 };
-
             using (var ctx = new BankEntities())
             {
                 ctx.Accounts.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
-
-
-
-
-
-
     }
 }
+        //TODO - HOW TO WRITE THING IN PROGRAM TO CREATE ACCOUNT IF IT"S WRITTEN THIS WAY?
+        //public bool CreateAccount(Account model)
+        //{
+            //var entity =
+                //new Account()
+                //{
+                    //AccountNumber = model.AccountNumber,
+                    //Pin = model.Pin,
+                    //AccountType = model.AccountType,
+                    //AccountBalance = model.AccountBalance,
+                    //CustomerID = model.CustomerID
+                //};
+
+

@@ -3,9 +3,9 @@ GO
 
 CREATE TABLE dbo.Account  
    (AccountID INT IDENTITY (1, 1) NOT NULL,  
-    Account# INT NOT NULL,  
+    AccountNumber INT NOT NULL,  
 	CustomerID INT NOT NULL,
-    Pin# INT NOT NULL,
+    Pin INT NOT NULL,
 	AccountType nvarchar(25) NOT NULL,
 	AccountBalance money NULL 
 CONSTRAINT [PK_dbo.Account] PRIMARY KEY CLUSTERED ([AccountID] ASC),

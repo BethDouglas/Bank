@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Bank.Services;
 
@@ -10,19 +11,42 @@ namespace ATMConsole
 
     class Program 
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            //Console.WriteLine("Please enter account number");
-            //int accountNumber = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Please enter account number");
+            int accountNumber = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Enter PIN");
+            int pin = Int32.Parse(Console.ReadLine());
+
+            AuthServices authServies = new AuthServices();
+            authServies.VerifyAccount(accountNumber, pin);
+
+            Thread.Sleep(1000);
+            Console.WriteLine("\nWhat would you like to do?\n" +
+                 "1: Withdrawl\n" +
+                 "2: Deposit\n" +
+                 "3: Check Balance\n" +
+                 "4: Cancel\n");
 
 
-            //Console.WriteLine("Enter PIN");
-            //int pin = Int32.Parse(Console.ReadLine());
 
-            //TODO - check pin and account number and retrieve name
-            //Console.Clear();
 
-            //Console.WriteLine(${"Hello {customerName}");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             // - - - - Get Name from person typiong in Console-----
             //Console.WriteLine("Tell you first name:");
@@ -34,7 +58,7 @@ namespace ATMConsole
 
             //Console.WriteLine("Please choose a 6 digit account number");
             //int accountNumber = Int32.Parse(Console.ReadLine());
-
+ 
             //Console.WriteLine("Please choose a 4 digit PIN");
             //int pin = Int32.Parse(Console.ReadLine());
 
@@ -42,10 +66,8 @@ namespace ATMConsole
             //CustomerService customerName = new CustomerService();
             //customerName.CreateCustomer("Person", "BoPerson");
 
-            AccountService accountNumber = new AccountService();
-            accountNumber.CreateAccount(123456);
-
+            //AccountService account = new AccountService();
+            //account.CreateAccount(888888, 8888, "Checking", 13000, 5);
         }
-
     }
 }
