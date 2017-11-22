@@ -28,44 +28,26 @@ namespace ATMConsole
                  "3: Check Balance\n" +
                  "4: Cancel\n");
 
+            TransactionServices transactionservices = new TransactionServices();
+            transactionservices.TransactionAction(Console.ReadLine());
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            // - - - - Get Name from person typiong in Console-----
+            // - - - - Get Name and account info from person typiong in Console-----
             //Console.WriteLine("Tell you first name:");
             //string first = Console.ReadLine();
             //Console.WriteLine("What is your last name");
             //string last = Console.ReadLine();
             // CustomerService customerName = new CustomerService();
             //customerName.CreateCustomer(first,last);
-
             //Console.WriteLine("Please choose a 6 digit account number");
-            //int accountNumber = Int32.Parse(Console.ReadLine());
- 
+            //int accountNumber = Int32.Parse(Console.ReadLine()); 
             //Console.WriteLine("Please choose a 4 digit PIN");
             //int pin = Int32.Parse(Console.ReadLine());
 
-            //--Type in names to enter into db--
+            //--Type in names and account info to enter into db--
             //CustomerService customerName = new CustomerService();
             //customerName.CreateCustomer("Person", "BoPerson");
-
             //AccountService account = new AccountService();
             //account.CreateAccount(888888, 8888, "Checking", 13000, 5);
         }
