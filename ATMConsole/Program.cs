@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Bank.Services;
+using Figgle;
 
 namespace ATMConsole
 {
@@ -13,6 +14,8 @@ namespace ATMConsole
     {
         public static void Main(string[] args)
         {
+            Console.WriteLine(FiggleFonts.Standard.Render("Super Fancy ATM!"));
+
             Console.WriteLine("Please enter account number");
             int accountNumber = Int32.Parse(Console.ReadLine());
             Console.WriteLine("Enter PIN");
@@ -29,11 +32,14 @@ namespace ATMConsole
                  "4: Cancel\n");
 
             TransactionServices transactionservices = new TransactionServices();
-            transactionservices.TransactionAction(Console.ReadLine());
+            transactionservices.TransactionAction(Console.ReadLine(), accountNumber);   
 
 
 
-            // - - - - Get Name and account info from person typiong in Console-----
+
+
+
+            // - - - - How to Get Name and account info from person typiong in Console-----
             //Console.WriteLine("Tell you first name:");
             //string first = Console.ReadLine();
             //Console.WriteLine("What is your last name");
@@ -45,7 +51,7 @@ namespace ATMConsole
             //Console.WriteLine("Please choose a 4 digit PIN");
             //int pin = Int32.Parse(Console.ReadLine());
 
-            //--Type in names and account info to enter into db--
+            //- - - - How to type in names and account info to enter into db----
             //CustomerService customerName = new CustomerService();
             //customerName.CreateCustomer("Person", "BoPerson");
             //AccountService account = new AccountService();

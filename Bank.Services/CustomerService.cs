@@ -24,5 +24,12 @@ namespace Bank.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public string CustomerName(string firstName, string lastName)
+        {
+            return firstName + " " + lastName;
+        }
+
+             
     }
 }

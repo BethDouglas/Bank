@@ -28,6 +28,14 @@ namespace Bank.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public Account GetAccountById(int accountNumber)
+        {
+            return
+                new BankEntities()
+                    .Accounts
+                    .SingleOrDefault(e => e.AccountNumber == accountNumber);
+        }
     }
 }
         //TODO - HOW TO WRITE THING IN PROGRAM TO CREATE ACCOUNT IF IT"S WRITTEN THIS WAY?
