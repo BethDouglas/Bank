@@ -14,7 +14,9 @@ namespace ATMConsole
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine(FiggleFonts.Standard.Render("Super Fancy ATM!"));
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(FiggleFonts.Standard.Render("Super  Fancy  ATM  !"));
+            Console.ResetColor();
 
             Console.WriteLine("Please enter account number");
             int accountNumber = Int32.Parse(Console.ReadLine());
@@ -33,10 +35,6 @@ namespace ATMConsole
 
             TransactionServices transactionservices = new TransactionServices();
             transactionservices.TransactionAction(Console.ReadLine(), accountNumber);   
-
-
-
-
 
 
             // - - - - How to Get Name and account info from person typiong in Console-----
