@@ -44,6 +44,7 @@ namespace ATMConsole
             //string last = Console.ReadLine();
             // CustomerService customerName = new CustomerService();
             //customerName.CreateCustomer(first,last);
+
             //Console.WriteLine("Please choose a 6 digit account number");
             //int accountNumber = Int32.Parse(Console.ReadLine()); 
             //Console.WriteLine("Please choose a 4 digit PIN");
@@ -52,6 +53,7 @@ namespace ATMConsole
             //- - - - How to type in names and account info to enter into db----
             //CustomerService customerName = new CustomerService();
             //customerName.CreateCustomer("Person", "BoPerson");
+
             //AccountService account = new AccountService();
             //account.CreateAccount(888888, 8888, "Checking", 13000, 5);
         }

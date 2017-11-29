@@ -22,22 +22,22 @@ namespace Bank.Services
             foreach (var acc in query)
             {
                 Console.WriteLine("Hello, I don't know your name yet.");
-                //TODO - add in customer name
+                //TODO - add in customer name - get account by id, then get customer id, then get name from customer table
                 return true;
             }
 
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Account and PIN do not match :(");
-            //TODO - go back to beginning
+            Console.ResetColor();
+            //TODO - go back to re-enter account/pin - don't go to choices (this still goes into account even if pin is not right)
             return false;
            
         }
-
+        
         //public string CurrentCustomerName(string firstName, string lastName)
         //{
         //var query = from a in db.Accounts
-
         //}
-
 
         //CustomerServices cusotmerServies = new CustomerServices();
         //customerServies.CustomerName(firstName, lastName);

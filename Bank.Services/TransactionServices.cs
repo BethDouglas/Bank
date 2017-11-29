@@ -16,23 +16,25 @@ namespace Bank.Services
                 case "1":
                     Console.Clear();
                     Console.WriteLine("Please enter amount to withdrawl");
-                    int withdrawlAmount = Int32.Parse(Console.ReadLine());
-
-                    Console.WriteLine("Your new balance is: ");
+                    decimal withdrawlAmount = Decimal.Parse(Console.ReadLine());
+                    //Console.WriteLine(NewBalanceWithdrawl);
+                    //TODO: update balance in database
+                    Console.WriteLine("Your new balance is:  $");
                     break;
                 case "2":
                     Console.Clear();
                     Console.WriteLine("Please enter amount of deposit");
-                    //copy from withdrawl when its figured out
+                    //TODO: copy from withdrawl when its figured out
                     break;
                 case "3":
                     Console.Clear();
                     Console.WriteLine($"Your balance is:  ${new AccountService().GetAccountById(accountNumber).AccountBalance}");
                     Thread.Sleep(2000);
                     Console.WriteLine("Thank you, goodbye");
+                    //TODO: change to go back to transaction choices
                     break;
                 case "4":
-                    //go back to beginning
+                    //TODO: go back to beginning - while loop with continue?
                     break;
                 default:
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -40,21 +42,23 @@ namespace Bank.Services
                     Thread.Sleep(2000);
                     Console.WriteLine("Goodbye");
                     Console.ResetColor();
-                    //go back to transaction choices
+                    //TODO:  change to go back to transaction choices
                     break;
             }
         }
 
 
-        public double NewBalanceWithdrawl(double accountBalance, int withdrawlAmount)
-        {
-            return accountBalance - withdrawlAmount;
-        }
+        //new AccountService().GetAccountById(accountNumber).AccountBalance = accountBalance;
 
-        public double NewBalanceDeposit(double accountBalance, int depositAmount)
-        {
-            return accountBalance + depositAmount;
-        }
+        //public decimal NewBalanceWithdrawl(decimal accountBalance, decimal withdrawlAmount)
+        //{
+        //    return accountBalance - withdrawlAmount;
+        //}
+
+        //public decimal NewBalanceDeposit(decimal accountBalance, decimal depositAmount)
+        //{
+        //    return accountBalance + depositAmount;
+        //}
 
     }
 }
