@@ -15,11 +15,20 @@ namespace Bank.Services
             {
                 case "1":
                     Console.Clear();
+                    Console.WriteLine($"Your balance is:  ${new AccountService().GetAccountById(accountNumber).AccountBalance}");
+                    Console.WriteLine("Please type your balance exactly as it appears above");
+                    int balanceBeforeWithdrawl = Int32.Parse(Console.ReadLine());
+                    Console.WriteLine("Thank you");
                     Console.WriteLine("Please enter amount to withdrawl");
-                    decimal withdrawlAmount = Decimal.Parse(Console.ReadLine());
+                    int withdrawlAmount = Int32.Parse(Console.ReadLine());
+
+                    int NewBalanceWinthdrawl(int balanceBeforeWithdrawl, int withdrawlAmount)
+                    {
+                        return balanceBeforeWithdrawl - withdrawlAmount;
+                    }
                     //Console.WriteLine(NewBalanceWithdrawl);
                     //TODO: update balance in database
-                    Console.WriteLine("Your new balance is:  $");
+                    Console.WriteLine($"Your new balance is:  ${NewBalanceWithdrawl()}");
                     break;
                 case "2":
                     Console.Clear();
