@@ -7,7 +7,7 @@ CREATE TABLE dbo.Account
 	CustomerID INT NOT NULL,
     Pin INT NOT NULL,
 	AccountType nvarchar(25) NOT NULL,
-	AccountBalance money NULL 
+	AccountBalance money DEFAULT 0 NOT NULL 
 CONSTRAINT [PK_dbo.Account] PRIMARY KEY CLUSTERED ([AccountID] ASC),
 CONSTRAINT [FK_dbo.Account_dbo.Customer_CustomerID] FOREIGN KEY ([CustomerID]) REFERENCES [dbo].[Customer] ([CustomerID]) ON DELETE CASCADE,
 );

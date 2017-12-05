@@ -25,10 +25,8 @@ namespace Bank.Services
                     {
                         return currentAccount.AccountBalance - (decimal)withdrawlAmount;
                     }
-
-                    Console.WriteLine(NewBalanceWithdrawl());
-                    //TODO: update balance in database
                     Console.WriteLine($"Your new balance is:  ${NewBalanceWithdrawl()}");
+                    //TODO: update balance in database
                     break;
                 case "2":
                     Console.Clear();
@@ -39,9 +37,7 @@ namespace Bank.Services
                     {
                         return currentAccount.AccountBalance - (decimal)depositAmount;
                     }
-
-                    Console.WriteLine(NewBalanceDeposit());
-
+                    Console.WriteLine($"Your new balance is:  ${NewBalanceDeposit()}");
                     break;
                 case "3":
                     Console.Clear();

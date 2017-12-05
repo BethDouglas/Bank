@@ -10,7 +10,7 @@ using Figgle;
 namespace ATMConsole
 {
 
-    class Program 
+    class Program
     {
         public static void Main(string[] args)
         {
@@ -34,7 +34,7 @@ namespace ATMConsole
                  "4: Cancel\n");
 
             TransactionServices transactionservices = new TransactionServices();
-            transactionservices.TransactionAction(Console.ReadLine(), accountNumber);   
+            transactionservices.TransactionAction(Console.ReadLine(), accountNumber);
 
 
             // - - - - How to Get Name and account info from person typiong in Console-----
@@ -55,7 +55,7 @@ namespace ATMConsole
             //customerName.CreateCustomer("Person", "BoPerson");
 
             //AccountService account = new AccountService();
-            //account.CreateAccount(888888, 8888, "Checking", 13000, 5);
+            //account.CreateAccount(444444, 4444, "Savings", 115000, 4);
         }
     }
 }
