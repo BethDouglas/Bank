@@ -19,7 +19,7 @@ namespace Bank.Models
         public int CustomerID { get; set; }
         public int Pin { get; set; }
         public string AccountType { get; set; }
-        public Nullable<decimal> AccountBalance { get; set; }
+        public decimal AccountBalance { get; set; }
     
         public virtual Customer Customer { get; set; }
     }

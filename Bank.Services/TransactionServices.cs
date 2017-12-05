@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Bank.Models;
 
 namespace Bank.Services
 {
@@ -11,29 +12,36 @@ namespace Bank.Services
     {
         public void TransactionAction(string transactionAction, int accountNumber)
         {
+            Account currentAccount = new AccountService().GetAccountById(accountNumber);
+
             switch (transactionAction)
             {
                 case "1":
                     Console.Clear();
-                    Console.WriteLine($"Your balance is:  ${new AccountService().GetAccountById(accountNumber).AccountBalance}");
-                    Console.WriteLine("Please type your balance exactly as it appears above");
-                    int balanceBeforeWithdrawl = Int32.Parse(Console.ReadLine());
-                    Console.WriteLine("Thank you");
                     Console.WriteLine("Please enter amount to withdrawl");
                     int withdrawlAmount = Int32.Parse(Console.ReadLine());
 
-                    int NewBalanceWinthdrawl(int balanceBeforeWithdrawl, int withdrawlAmount)
+                    decimal NewBalanceWithdrawl()
                     {
-                        return balanceBeforeWithdrawl - withdrawlAmount;
+                        return currentAccount.AccountBalance - (decimal)withdrawlAmount;
                     }
-                    //Console.WriteLine(NewBalanceWithdrawl);
+
+                    Console.WriteLine(NewBalanceWithdrawl());
                     //TODO: update balance in database
                     Console.WriteLine($"Your new balance is:  ${NewBalanceWithdrawl()}");
                     break;
                 case "2":
                     Console.Clear();
                     Console.WriteLine("Please enter amount of deposit");
-                    //TODO: copy from withdrawl when its figured out
+                    int depositAmount = Int32.Parse(Console.ReadLine());
+
+                    decimal NewBalanceDeposit()
+                    {
+                        return currentAccount.AccountBalance - (decimal)depositAmount;
+                    }
+
+                    Console.WriteLine(NewBalanceDeposit());
+
                     break;
                 case "3":
                     Console.Clear();
@@ -55,19 +63,5 @@ namespace Bank.Services
                     break;
             }
         }
-
-
-        //new AccountService().GetAccountById(accountNumber).AccountBalance = accountBalance;
-
-        //public decimal NewBalanceWithdrawl(decimal accountBalance, decimal withdrawlAmount)
-        //{
-        //    return accountBalance - withdrawlAmount;
-        //}
-
-        //public decimal NewBalanceDeposit(decimal accountBalance, decimal depositAmount)
-        //{
-        //    return accountBalance + depositAmount;
-        //}
-
     }
 }
